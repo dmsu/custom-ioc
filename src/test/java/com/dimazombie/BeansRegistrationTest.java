@@ -32,4 +32,19 @@ public class BeansRegistrationTest{
         //THEN
         Assert.assertNotNull(training);
     }
+
+    @Test
+    void shouldReturnBeanRegisteredAsObject(){
+        //GIVEN
+        DependenciesConfig config = new DependenciesConfig();
+        Training expected = new Training();
+
+        config.register(expected).complete();
+        Injector injector = new Injector(config);
+
+        //WHEN
+        Training training = injector.get(Training.class);
+        //THEN
+        Assert.assertEquals(training, expected);
+    }
 }
