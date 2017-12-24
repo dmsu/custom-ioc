@@ -1,4 +1,4 @@
 package com.dimazombie.testing.simple;
 
-public class Training {
+public class Training implements Presentation {
 }
